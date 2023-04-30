@@ -65,7 +65,7 @@ nav ul li a:hover {
 
 .open-menu {
   display: none;
-  background-color: rgb(93, 95, 94);
+ background: none;
   border: none;
   padding-top: 15px;
 }
@@ -790,7 +790,7 @@ img {
   position: absolute;
   right: 0;
   height: 100vh;
-  background-color: hsl(36, 58%, 58%);
+  background-color: hsl(201, 96%, 71%);
   width: 60%;
   padding: 20px 20px;
 }
