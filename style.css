@@ -272,7 +272,10 @@ height: 100px;
 .count {
   padding: 25px 75px;
 }
-.about-achieves-count h1 {
+.counts{
+  display: flex;
+}
+.about-achieves-count span {
   font-size: 3rem;
 }
 .about-achieves-count h2 {
