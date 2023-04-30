@@ -234,7 +234,7 @@ height: 100px;
 }
 
 .about-achieves-heads h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   letter-spacing: -1px;
   line-height: 50px;
 }
@@ -1022,6 +1022,12 @@ img {
   }
   .campaigns-main-content{
     height: 1170px;
+  }
+  .img-container img{
+    width: 20rem;
+  }
+  .name{
+    margin-top: 0;
   }
 }
 
