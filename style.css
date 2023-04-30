@@ -1029,6 +1029,9 @@ img {
   .name{
     margin-top: 0;
   }
+  .name{
+    height: 0;
+  }
 }
 
 
