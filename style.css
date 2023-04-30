@@ -11,7 +11,10 @@ body {
   font-family: "Inter";
 }
 header {
-  background-color: rgb(93, 95, 94);
+  background: linear-gradient(rgb(45, 111, 204), transparent),
+    linear-gradient(to top left, rgb(36, 121, 131), transparent),
+    linear-gradient(to top right, rgb(28, 28, 156), transparent);
+  background-blend-mode: screen;
   padding: 0.5rem 3rem 0.5rem 2rem;
   width: 100%;
   display: flex;
@@ -57,7 +60,7 @@ nav ul li a {
 
 nav ul li a:hover {
   cursor: pointer;
-  color: rgb(240, 192, 188);
+  color: rgb(61, 59, 59);
 }
 
 .open-menu {
