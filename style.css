@@ -640,10 +640,9 @@ img {
 }
 .review-content {
   max-width: 100%;
-  padding: 20px 20px;
+  padding: 10px 20px;
   margin-top: 3rem;
   font-size: 20px;
-  text-align: center;
 }
 /*Testinomilas Over*/
 /*Footer Content*/
@@ -1015,6 +1014,9 @@ img {
   .img-containe {
     max-width: 100%;
   }
+  .name{
+    height: 0;
+  }
 }
 @media (max-width: 350px){
   .pages{
@@ -1032,6 +1034,9 @@ img {
   .name{
     height: 0;
   }
+  .review {
+    width: 120%;
+}
 }
 
 
