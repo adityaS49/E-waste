@@ -58,10 +58,9 @@ remove5.addEventListener("click",()=>{
   remove.style.display = "none"
 })
 
-
 const numberElement1 = document.querySelector('.number.loaded1');
 const targetValue1 = parseInt(numberElement1.getAttribute('data-value'));
-const animationDuration1 = parseInt(numberElement1.getAttribute('data-animation-duration'))*2;
+const animationDuration1 = parseInt(numberElement1.getAttribute('data-animation-duration'));
 
 const numberElement2 = document.querySelector('.number.loaded2');
 const targetValue2 = parseInt(numberElement2.getAttribute('data-value'));
@@ -93,57 +92,53 @@ function countNumber(timestamp) {
   }
   if (!startTime2) {
     startTime2 = timestamp;
-   }
+  }
   if (!startTime3) {
     startTime3 = timestamp;
   }
   if (!startTime4) {
     startTime4= timestamp;
-   }
+  }
+
   let progress1 = timestamp - startTime1;
-  let increment = Math.ceil(targetValue1 / (animationDuration1/ progress1));
-  currentValue1 += increment;
+  let increment1 = Math.ceil(targetValue1 / (animationDuration1/ progress1));
+  currentValue1 += increment1;
   if (currentValue1 >= targetValue1) {
     currentValue1 = targetValue1;
   }
   numberElement1.textContent = currentValue1.toLocaleString();
-  if (currentValue1 < targetValue1) {
-    window.requestAnimationFrame(countNumber);
-  }
-    
-      let progress2 = timestamp - startTime2;
-       increment = Math.ceil(targetValue2 / (animationDuration2/ progress2));
-      currentValue2 += increment;
-    if (currentValue2 >= targetValue2) {
-        currentValue2 = targetValue2;
-      }
-      numberElement2.textContent = currentValue2.toLocaleString();
-      if (currentValue2 < targetValue2) {
-        window.requestAnimationFrame(countNumber);
-      }
-    
-      let progress3 = timestamp - startTime3;
-       increment = Math.ceil(targetValue3/ (animationDuration3/ progress3));
-      currentValue3 += increment;
-    if (currentValue3 >= targetValue3) {
-        currentValue3 = targetValue3;
-      }
-      numberElement3.textContent = currentValue3.toLocaleString();
-      if (currentValue3 < targetValue3) {
-        window.requestAnimationFrame(countNumber);
-      }
 
-      let progress4 = timestamp - startTime4;
-       increment = Math.ceil(targetValue3/ (animationDuration4/ progress4));
-      currentValue4 += increment;
-    if (currentValue4 >= targetValue4) {
-        currentValue4 = targetValue4;
-      }
-      numberElement4.textContent = currentValue4.toLocaleString();
-      if (currentValue4 < targetValue4) {
-        window.requestAnimationFrame(countNumber);
-      }
+  let progress2 = timestamp - startTime2;
+  let increment2 = Math.ceil(targetValue2 / (animationDuration2/ progress2));
+  currentValue2 += increment2;
+  if (currentValue2 >= targetValue2) {
+    currentValue2 = targetValue2;
+  }
+  numberElement2.textContent = currentValue2.toLocaleString();
+
+  let progress3 = timestamp - startTime3;
+  let increment3 = Math.ceil(targetValue3/ (animationDuration3/ progress3));
+  currentValue3 += increment3;
+  if (currentValue3 >= targetValue3) {
+    currentValue3 = targetValue3;
+  }
+  numberElement3.textContent = currentValue3.toLocaleString();
+
+  let progress4 = timestamp - startTime4;
+  let increment4 = Math.ceil(targetValue4/ (animationDuration4/ progress4));
+  currentValue4 += increment4;
+  if (currentValue4 >= targetValue4) {
+    currentValue4 = targetValue4;
+  }
+  numberElement4.textContent = currentValue4.toLocaleString();
+
+  if (currentValue1 < targetValue1 || currentValue2 < targetValue2 || currentValue3 < targetValue3 || currentValue4 < targetValue4) {
+    setTimeout(() => {
+      window.requestAnimationFrame(countNumber);
+    }, 50);
+  }
 }
+
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -154,10 +149,3 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.5 });
 
 observer.observe(numberElement1);
-window.requestAnimationFrame(countNumber);
-
-
-
-
-
-
